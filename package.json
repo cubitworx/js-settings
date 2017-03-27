@@ -1,0 +1,29 @@
+{
+  "name": "js-settings",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "Settings helper",
+  "scripts": {
+    "build": "tsc -p src/",
+    "test": "npm run build && jasmine",
+		"test:once": "jasmine",
+		"lint": "tslint ./src/**/*.ts -t verbose"
+  },
+  "author": "Charles Louw <charles.louw@gmail.com>",
+	"repository": {
+		"type" : "git",
+		"url" : "https://github.com/cubitworx/js-settings.git"
+	},
+  "dependencies": {
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "@types/jasmine": "2.5.36",
+    "@types/lodash": "^4.14.58",
+    "@types/node": "^6.0.46",
+    "jasmine": "^2.5.3",
+    "jasmine-core": "^2.5.2",
+    "tslint": "^4.5.1",
+    "typescript": "~2.2.1"
+  }
+}
