@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "license": "MIT",
   "description": "Settings helper",
+	"main": "index.js",
   "scripts": {
     "build": "tsc -p src/",
     "test": "npm run build && jasmine",
