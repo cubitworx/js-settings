@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var _ = require("lodash");
-exports.Settings = new SettingsStatic();
 var SettingsStatic = (function () {
     function SettingsStatic() {
         this._settings = {};
@@ -14,13 +13,11 @@ var SettingsStatic = (function () {
         if (key) {
             if (key.split('.').length > 1)
                 throw 'Settings.extend() currently does not support deep value setting';
-            var source = (_a = [this._settings[key]]).concat.apply(_a, args);
             _.merge.apply(_, [this._settings[key]].concat(args));
         }
         else {
             _.merge.apply(_, [this._settings].concat(args));
         }
-        var _a;
     };
     SettingsStatic.prototype.get = function (key, otherwise) {
         var setting = _.clone(this._settings), keys = key.split('.');
@@ -50,4 +47,5 @@ var SettingsStatic = (function () {
 }());
 exports.SettingsStatic = SettingsStatic;
 ;
+exports.Settings = new SettingsStatic();
 //# sourceMappingURL=index.js.map

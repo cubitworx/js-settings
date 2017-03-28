@@ -1,7 +1,5 @@
 import * as _ from 'lodash';
 
-export const Settings = new SettingsStatic();
-
 export class SettingsStatic {
 
 	private _settings: any = {};
@@ -10,7 +8,6 @@ export class SettingsStatic {
 		if ( key ) {
 			if ( key.split('.').length > 1 )
 				throw 'Settings.extend() currently does not support deep value setting';
-			let source = [ this._settings[key] ].concat( ...args );
 			_.merge(this._settings[key], ...args);
 		} else {
 			_.merge(this._settings, ...args);
@@ -46,3 +43,5 @@ export class SettingsStatic {
 	}
 
 };
+
+export const Settings = new SettingsStatic();
