@@ -1,4 +1,3 @@
 node_modules/
-dist/*.spec.d.js
 dist/*.spec.js
 dist/*.spec.js.map

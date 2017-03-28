@@ -4,14 +4,14 @@
   "license": "MIT",
   "description": "Settings helper",
   "scripts": {
-    "build": "tsc -d",
+    "build": "tsc",
 		"lint": "tslint ./src/**/*.ts -t verbose",
 		"precommit": "npm run build && npm run lint && npm run test:once",
-		"preinstall": "npm run build",
     "test": "npm run build && jasmine",
 		"test:once": "jasmine"
   },
 	"main": "./dist",
+	"types": "./src",
   "author": "Charles Louw <charles.louw@gmail.com>",
 	"repository": {
 		"type" : "git",
@@ -23,7 +23,6 @@
   "devDependencies": {
     "@types/jasmine": "2.5.36",
     "@types/lodash": "^4.14.58",
-    "@types/node": "^6.0.46",
     "jasmine": "^2.5.3",
     "jasmine-core": "^2.5.2",
     "tslint": "^4.5.1",
