@@ -1,6 +1,8 @@
 import * as _ from 'lodash';
 
-export const Settings = new class {
+export const Settings = new SettingsStatic();
+
+export class SettingsStatic {
 
 	private _settings: any = {};
 

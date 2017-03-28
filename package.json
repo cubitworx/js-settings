@@ -3,13 +3,15 @@
   "version": "0.0.1",
   "license": "MIT",
   "description": "Settings helper",
-	"main": "./index.js",
   "scripts": {
-    "build": "tsc -p src/",
+    "build": "tsc -d",
+		"lint": "tslint ./src/**/*.ts -t verbose",
+		"precommit": "npm run build && npm run lint && npm run test:once",
+		"preinstall": "npm run build",
     "test": "npm run build && jasmine",
-		"test:once": "jasmine",
-		"lint": "tslint ./src/**/*.ts -t verbose"
+		"test:once": "jasmine"
   },
+	"main": "./dist",
   "author": "Charles Louw <charles.louw@gmail.com>",
 	"repository": {
 		"type" : "git",
