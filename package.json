@@ -3,15 +3,15 @@
   "version": "0.0.1",
   "license": "MIT",
   "description": "Settings helper",
+  "main": "./dist",
+  "module": "./src",
+  "types": "./dist",
   "scripts": {
-    "build": "tsc",
+		"build": "rimraf dist && tsc -p tsconfig-dist.json",
 		"lint": "tslint ./src/**/*.ts -t verbose",
-		"precommit": "npm run build && npm run lint && npm run test:once",
-    "test": "npm run build && jasmine",
-		"test:once": "jasmine"
+		"precommit": "npm run build && npm run lint && npm run test",
+    "test": "jasmine"
   },
-	"main": "./dist",
-	"types": "./src",
   "author": "Charles Louw <charles.louw@gmail.com>",
 	"repository": {
 		"type" : "git",
@@ -22,10 +22,11 @@
   },
   "devDependencies": {
     "@types/jasmine": "2.5.36",
-    "@types/lodash": "^4.14.58",
+    "@types/lodash": "^4.14.62",
     "jasmine": "^2.5.3",
     "jasmine-core": "^2.5.2",
+    "rimraf": "^2.5.4",
     "tslint": "^4.5.1",
-    "typescript": "~2.2.1"
+    "typescript": "^2.2.1"
   }
 }
